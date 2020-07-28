@@ -8,7 +8,8 @@
             padding: 0 10px 10px 0;
             width: 20%;
         }
-        .right{
+
+        .right {
             float: right;
             width: 60%;
         }
@@ -21,10 +22,19 @@
 <body>
     <h1>Profile Page</h1>
     <hr><br><br>
-    <img src="photos/profil.jpg" class="left">
-    <label>Name : Busra</label><br><br>
-    <label>Surname : Alkan</label>
-    <div class="row, right">
+
+    <div class="left">
+        <img src="photos/profil.jpg" style="width: 300px; height: 300px;">
+        <br>
+        <h3 style="color: chocolate;">Name Surname : </h3>
+        <span id="profilName" style="color: chocolate;"></span>
+    </div>
+
+
+
+    <br><br>
+
+    <div class="row, right" style="margin-right: 30px;">
         <h2>My Images</h2>
         <div class="column">
             <img src="photos/1.jpg" alt="Nature" style="width:100%">
@@ -35,11 +45,26 @@
         <div class="column">
             <img src="photos/3.jpg" alt="Mountains" style="width:100%">
         </div>
-        
-        
-    </div>  
+        <div class="column">
+            <img src="photos/4.jpg" alt="Mountains" style="width:100%">
+        </div>
+        <br><br><br>
+    </div>
+    <br><br><br><br>
+    <div style="margin-left: 10px; margin-top: 400px;">
+        <button type="submit" id="editButton" class="button">Edit Your Profile</button>
+        <button type="submit" id="uploadButton" class="button">Upload İmage</button><br><br><br>
+    </div>
 
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content, m">
+            <span class="close">&times;</span>
+            <div id="log">
 
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -3,9 +3,91 @@
             box-sizing: border-box;
         }
 
+        .left {
+            margin-left: 20px;
+            float: left;
+            padding: 0 10px 10px 0;
+            width: 20%;
+
+        }
+
+        .right {
+            float: right;
+            width: 60%;
+        }
+        .m{
+            background-color: rgba(0, 0, 0, 0.9);
+            border: solid black 2px;
+            border-radius: 20px;
+            width: 80%;
+            height: 500px;
+            left: 10%;
+            right: 10%;
+            position: absolute;
+            top: 20%;
+            text-align: center;
+        }
+        .upload {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: solid black 2px;
+            border-radius: 20px;
+            width: 80%;
+            height: 300px;
+            left: 10%;
+            right: 10%;
+            position: absolute;
+            top: 20%;
+            text-align: center;
+        }
         body {
             margin: 0;
             font-family: Arial;
+        }
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         /* The grid: Four equal columns that floats next to each other */
@@ -74,6 +156,7 @@
         }
 
         input[type=text],
+        input[type=file],
         input[type=password] {
             width: 60%;
             padding: 12px 20px;
@@ -113,8 +196,8 @@
             color: #fff;
             background-color: chocolate;
             border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
+            border-radius: 10px;
+            box-shadow: 0 5px #999;
           }
           
           .button:hover {background-color: chocolate}

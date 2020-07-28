@@ -1,0 +1,28 @@
+{
+    "user1":[
+        {
+            "name" : "busra alkan",
+            "username": "bsr",
+            "password": "alkan",
+            "photos" : [
+                {
+                    "photo_id" : 1,
+                    "photoUrl" : "photos/1.jpg"
+
+                },
+                {
+                    "photo_id" : 2,
+                    "photoUrl" : "photos/2.jpg"
+
+                },
+                {
+                    "photo_id" : 3,
+                    "photoUrl" : "photos/3.jpg"
+
+                }
+            ]
+        }
+        
+    ]
+}
+

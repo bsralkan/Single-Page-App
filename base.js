@@ -2,6 +2,7 @@ var baseController = (function () {
     var container = undefined;
     var templateName = undefined,
     onloadCB = undefined;
+    var formName=undefined;
 
     var iBaseController = function () {
         
@@ -32,6 +33,19 @@ var baseController = (function () {
             xhttp.open("GET", templateName, true);
             xhttp.send();
         },
+
+        //loadContent function is wrote for pop-up
+        loadContent: function(div, themplate){
+            var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                div.innerHTML = this.responseText;
+
+            }
+        };
+        xhttp.open("GET", themplate, true);
+        xhttp.send();
+        }
 
 
     }

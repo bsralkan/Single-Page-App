@@ -1,0 +1,19 @@
+{
+     users:[
+                    {
+
+                         id:1,
+                         name:"Büşra Alkan",
+                         photos:[
+                                         {
+                                               photo_id:1,
+                                               photo_url:'assets/photo/1',
+                                          },
+                                          {
+                                               photo_id:2,
+                                               photo_url:'assets/photo/2',
+                                          }
+                                      ]
+                     }
+               ]
+}

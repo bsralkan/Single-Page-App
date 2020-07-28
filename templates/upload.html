@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form id="form">
-        <input type="file" id="file" name="filename">
-        <input type="submit">
-      </form>
-</body>
-</html>
+
+        <h2>Select image:</h2>
+        <label for="file-ip-1">Upload Image</label>
+        <input type="file" id="file-ip-1" style="display: none;" accept="image/*" onchange="uploadController.showPreview(event);">
+        <div class="preview">
+            <img id="file-ip-1-preview">
+        </div>
+        <input type="text" id="tag1" style="width: 30%; padding: 8px 6px;">
+        <input type="text" id="tag2" style="width: 30%; padding: 8px 6px;">
+        <input type="text" id="tag3" style="width: 30%; padding: 8px 6px;">
+        <button id="uploadButton" type="submit" class="button">Save</button>
