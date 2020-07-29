@@ -13,14 +13,7 @@ var uploadController = (function () {
         console.log("upload")
         var uploadButton = document.getElementById("uploadButton");
         uploadButton.addEventListener("click", (c) => {
-            
-            let photo = document.getElementById("file-ip-1").files[0];  // file from input
-            let req = new XMLHttpRequest();
-            let formData = new FormData();
-
-            formData.append("photo", photo);
-            req.open("GET", 'photos/upload');
-            req.send(formData);
+            uploader.show();            
         })
     }
     uController.prototype.showPreview = function (event) {

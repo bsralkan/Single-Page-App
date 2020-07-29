@@ -1,11 +1,12 @@
+<br><br><br>
+<label for="fInput">Upload Image</label>
+<input onchange="uploader.showPreview(event)" type="file" id="fInput" style="display: none;" accept="image/*">
 
-        <h2>Select image:</h2>
-        <label for="file-ip-1">Upload Image</label>
-        <input type="file" id="file-ip-1" style="display: none;" accept="image/*" onchange="uploadController.showPreview(event);">
-        <div class="preview">
-            <img id="file-ip-1-preview">
-        </div>
-        <input type="text" id="tag1" style="width: 30%; padding: 8px 6px;">
-        <input type="text" id="tag2" style="width: 30%; padding: 8px 6px;">
-        <input type="text" id="tag3" style="width: 30%; padding: 8px 6px;">
-        <button id="uploadButton" type="submit" class="button">Save</button>
+<input type="text" id="tag1" style="width: 30%; padding: 8px 6px;">
+<input type="text" id="tag2" style="width: 30%; padding: 8px 6px;">
+<input type="text" id="tag3" style="width: 30%; padding: 8px 6px;">
+
+<button id="btnSubmit" onclick="uploader.upload()" type="submit" class="button">Save</button>
+<div class="preview">
+    <img id="preview" width="200" height="200" style="display: none; margin: auto;">
+</div>
