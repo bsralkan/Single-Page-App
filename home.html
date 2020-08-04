@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>    
     <script src="base.js"></script>
+    <script src="photos.js"></script>
     <script src="launch.js"></script>
     <script src="signup.js"></script>
     <script src="login.js"></script>
     <script src="profile.js"></script>
     <script src="photoUploader.js"></script>   
-    <script src="upload.js"></script>    
+    <script src="upload.js"></script>  
+      
       
     <link rel="stylesheet" type="text/css" href="style.css">
     
@@ -19,11 +21,13 @@
 </head>
 
 <body id="body">
-    <div id="container">
-        <script>
-            launchController.show()
-        </script>
+    <div class="parent" id="parent">
+        
     </div>
+    <script>
+        var parent = document.querySelector(".parent")
+        launchController.show(parent);
+    </script>
 
 </body>
 

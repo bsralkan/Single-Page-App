@@ -1,215 +1,294 @@
+* {
+    box-sizing: border-box;
+}
 
-        * {
-            box-sizing: border-box;
-        }
 
-        .left {
-            margin-left: 20px;
-            float: left;
-            padding: 0 10px 10px 0;
-            width: 20%;
+/******************************* image hover starts *******************/
 
-        }
 
-        .right {
-            float: right;
-            width: 60%;
-        }
-        .m{
-            background-color: rgba(0, 0, 0, 0.9);
-            border: solid black 2px;
-            border-radius: 20px;
-            width: 80%;
-            height: 500px;
-            left: 10%;
-            right: 10%;
-            position: absolute;
-            top: 20%;
-            text-align: center;
-        }
-        .upload {
-            background-color: rgba(0, 0, 0, 0.9);
-            border: solid black 2px;
-            border-radius: 20px;
-            width: 80%;
-            height: 300px;
-            left: 10%;
-            right: 10%;
-            position: absolute;
-            top: 20%;
-            text-align: center;
-        }
-        body {
-            margin: 0;
-            font-family: Arial;
-        }
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 100px;
-            /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.6);
-            /* Black w/ opacity */
-        }
+/* Parent Container */
 
-        /* Modal Content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
+.content_img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 10px;
+}
 
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
 
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+/* Child Text Container */
 
-        /* The grid: Four equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 25%;
-            padding: 10px;
-        }
+.content_img div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: black;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.5s linear;
+}
 
-        /* Style the images inside the grid */
-        .column img {
-            opacity: 0.8;
-            cursor: pointer;
-        }
 
-        .column img:hover {
-            opacity: 1;
-        }
+/* Hover on Parent Container */
 
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
+.content_img:hover {
+    cursor: pointer;
+}
 
-        /* The expanding image container */
-        .container {
-            position: relative;
-            display: none;
-        }
+.content_img:hover div {
+    width: 150px;
+    padding: 8px 15px;
+    visibility: visible;
+    opacity: 0.7;
+}
 
-        /* Expanding image text */
-        #imgtext {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            color: white;
-            font-size: 20px;
-        }
 
-        /* Closable button inside the expanded image */
-        .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: white;
-            font-size: 35px;
-            cursor: pointer;
-        }
-        body {
-            background-color: lavenderblush;
-        }
+/******************************* image hover ends *******************/
 
-        input {
-            text-align: center;
-        }
+.left {
+    margin-left: 20px;
+    float: left;
+    padding: 0 10px 10px 0;
+    width: 20%;
+}
 
-        h1,h2 {
-            color: chocolate;
-            text-align: center;
-        }
+.right {
+    float: right;
+    width: 60%;
+}
 
-        form {
-            text-align: center;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
 
-        input[type=text],
-        input[type=file],
-        input[type=password] {
-            width: 60%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
 
-        label {
-            width: auto;
-            color: chocolate;
-            padding: 30px;
-        }
+/* The expanding image container */
 
-        input[type=submit] {
-            background-color: chocolate;
-            font-size: 20px;
-            margin: 4px 2px;
-            text-align: center;
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;            
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-        }
-        .button {
-            display: inline-block;
-            padding: 15px 25px;
-            font-size: 24px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: chocolate;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px #999;
-          }
-          
-          .button:hover {background-color: chocolate}
-          
-          .button:active {
-            background-color: chocolate;
-            box-shadow: 0 3px #666;
-            transform: translateY(4px);
-          }
-        .container {
-            padding: 16px;
-            background-color: white;
-          }
-          
-        
+.container {
+    position: relative;
+    display: none;
+}
+
+.m {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: solid black 2px;
+    border-radius: 20px;
+    width: 80%;
+    height: 500px;
+    left: 10%;
+    right: 10%;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+}
+
+.upload {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: solid black 2px;
+    border-radius: 20px;
+    width: 80%;
+    height: 300px;
+    left: 10%;
+    right: 10%;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* The grid: Four equal columns that floats next to each other */
+
+.column {
+    float: left;
+    width: 18%;
+    padding: 10px;
+}
+
+
+/* Style the images inside the grid */
+
+.column img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* The expanding image container */
+
+.container {
+    position: relative;
+    display: none;
+}
+
+
+/* Expanding image text */
+
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* Closable button inside the expanded image */
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+body {
+    background-color: lavenderblush;
+}
+
+input {
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: chocolate;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+input[type=text],
+input[type=file],
+input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+label {
+    width: auto;
+    color: chocolate;
+    padding: 30px;
+}
+
+input[type=submit] {
+    background-color: chocolate;
+    font-size: 20px;
+    margin: 4px 2px;
+    text-align: center;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: chocolate;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+}
+
+.button:hover {
+    background-color: chocolate
+}
+
+.button:active {
+    background-color: chocolate;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+.container {
+    padding: 16px;
+    background-color: white;
+}

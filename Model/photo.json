@@ -1,0 +1,28 @@
+{
+    "photos": [{
+            "url": "photos/1.jpg",
+            "detail": "Take a deep breathe",
+            "tag1": "#nature",
+            "tag2": "#green",
+            "tag3": "#breathe"
+
+        },
+        {
+            "url": "photos/2.jpg",
+            "detail": "look at the sun",
+            "tag1": "#jungle",
+            "tag2": "#green",
+            "tag3": "#breathe"
+
+        },
+        {
+            "url": "photos/3.jpg",
+            "detail": "feel the peace",
+            "tag1": "#beatiful",
+            "tag2": "#green",
+            "tag3": "#sun"
+
+        }
+
+    ]
+}

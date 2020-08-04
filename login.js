@@ -27,12 +27,13 @@ var loginController = (function () {
                     }
                 }
                 if (kontrol == 1) {
-
-                    baseController.prototype.destroy(profile.show);
+                    var parent = document.querySelector(".parent");
+                    baseController.prototype.destroy(function(){
+                        profile.show(parent);
+                    });
                 }
                 else
                     alert("you don't have logged in")
-
             }
         };
         xhttp.send();
