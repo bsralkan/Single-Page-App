@@ -13,8 +13,7 @@ var profile = (function() {
 
         var url = "Model/photo.json";
         var xhttp = new XMLHttpRequest();
-        var imgDiv = document.querySelector(".imageDiv");
-        imgDiv.setAttribute("class", "row");
+
 
 
         xhttp.onreadystatechange = function() { // çalışmıyor
@@ -23,10 +22,13 @@ var profile = (function() {
                 var response = this.responseText;
                 var parse = JSON.parse(response);
                 var len = parse.photos.length;
+                var imgDiv = document.querySelector(".imageDiv");
+                imgDiv.setAttribute("class", "row");
+
                 for (i = 0; i < len; i++) {
                     var photoUrl = parse.photos[i];
-                    var pcontroller = new photosController.photosController(imgDiv, photoUrl);
-                    //photosController.getPhotos(imgDiv, photoUrl);
+                    var photoObject = new photosController(imgDiv, photoUrl);
+                    photoObject.show();
                 }
 
             }

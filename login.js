@@ -1,20 +1,19 @@
-var loginController = (function () {
-    var iController = function () {
-    }
+var loginController = (function() {
+    var iController = function() {}
     iController.prototype = Object.create(baseController.prototype);
-    iController.prototype.show = function () {
+    iController.prototype.show = function() {
         var div = document.createElement("div");
         this.init(div, "templates/login.html", iController.prototype.login);
         this.loadTemplate()
     }
-    iController.prototype.login = function () {
+    iController.prototype.login = function() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         var url = "Model/user.json";
         var xhttp = new XMLHttpRequest();
         var kontrol = 0;
         xhttp.open("GET", url, true);
-        xhttp.onreadystatechange = function () {
+        xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var response = this.responseText;
                 var parse = JSON.parse(response);
@@ -28,18 +27,17 @@ var loginController = (function () {
                 }
                 if (kontrol == 1) {
                     var parent = document.querySelector(".parent");
-                    baseController.prototype.destroy(function(){
+                    baseController.prototype.destroy(function() {
                         profile.show(parent);
                     });
-                }
-                else
+                } else
                     alert("you don't have logged in")
             }
         };
         xhttp.send();
     }
     return {
-        show: function () {
+        show: function() {
             var abc = new iController();
             iController.prototype.show();
 

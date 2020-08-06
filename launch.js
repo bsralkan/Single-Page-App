@@ -24,11 +24,11 @@ var launchController = (function() {
             if (this.readyState == 4 && this.status == 200) {
                 var response = this.responseText;
                 var parse = JSON.parse(response);
-                for (i = 0; i < 10; i++) {
-                    var ur = parse.photos[i];
-                    var pcontroller = new photosController.photosController(container, ur);
-
-                    //photosController.getPhotos(container, ur);
+                var leng = parse.photos.length;
+                for (i = 0; i < leng; i++) {
+                    var model = parse.photos[i];
+                    var pcontroller = new photosController(container, model);
+                    pcontroller.show();
                 }
             }
         };

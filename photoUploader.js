@@ -1,10 +1,10 @@
-var uploader = (function () {
+var uploader = (function() {
 
     var btn = undefined,
 
         fInput = undefined,
 
-        preview = undefined; 
+        preview = undefined;
 
     function uploader(file) {
 
@@ -12,25 +12,25 @@ var uploader = (function () {
 
             fileName = file.name,
 
-            target = "https://www.picture/upload",
+            target = "http://localhost/ImageUploadDemo/api/ImageUpload",
 
-            mimeType = file.type; 
+            mimeType = file.type;
 
         xmlHttpRequest.open('POST', target, true);
 
         xmlHttpRequest.setRequestHeader('Content-Type', mimeType);
 
-        xmlHttpRequest.setRequestHeader('Content-Disposition', 'attachment; filename="' + fileName + '"');
+        // xmlHttpRequest.setRequestHeader('Content-Disposition', 'attachment; filename="' + fileName + '"');
 
         xmlHttpRequest.send(file);
 
-    } 
+    }
 
     function btnClick() {
 
         if (fInput.files.length > 0) {
 
-            var file = fInput.files[0];        
+            var file = fInput.files[0];
 
             uploader(file);
 
@@ -38,7 +38,7 @@ var uploader = (function () {
 
     }
 
-    uploader.prototype.upload = function(){
+    uploader.prototype.upload = function() {
 
         btn = document.getElementById("uploadButton");
 
@@ -49,16 +49,16 @@ var uploader = (function () {
         btnClick();
     }
 
-    return{
-        upload : function(){
+    return {
+        upload: function() {
             uploader.prototype.upload();
         },
-        showPreview: function(event){
+        showPreview: function(event) {
             preview = document.getElementById("preview");
             preview.src = URL.createObjectURL(event.target.files[0]);
             preview.style.display = "block";
         }
     }
- 
+
 
 })();
