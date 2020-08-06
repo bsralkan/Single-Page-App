@@ -22,7 +22,16 @@
             "tag2": "#green",
             "tag3": "#sun"
 
+        },
+        {
+            "url": "photos/4.jpg",
+            "detail": "peaks of the mountains",
+            "tag1": "#mountains",
+            "tag2": "#gray",
+            "tag3": "#day"
+
         }
+
 
     ]
 }

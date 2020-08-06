@@ -18,18 +18,14 @@ var launchController = (function() {
         var url = "Model/photo.json";
         var xhttp = new XMLHttpRequest();
         var container = document.querySelector(".photosDiv");
-        container.setAttribute("class", "row");
+
 
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var response = this.responseText;
                 var parse = JSON.parse(response);
-                var leng = parse.photos.length;
-                for (i = 0; i < leng; i++) {
-                    var model = parse.photos[i];
-                    var pcontroller = new photosController(container, model);
-                    pcontroller.show();
-                }
+                var row = new rowController(container, parse.photos);
+
             }
         };
         xhttp.open("GET", url, true);

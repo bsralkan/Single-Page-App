@@ -21,15 +21,13 @@ var profile = (function() {
             if (this.readyState == 4 && this.status == 200) {
                 var response = this.responseText;
                 var parse = JSON.parse(response);
-                var len = parse.photos.length;
-                var imgDiv = document.querySelector(".imageDiv");
-                imgDiv.setAttribute("class", "row");
 
-                for (i = 0; i < len; i++) {
-                    var photoUrl = parse.photos[i];
-                    var photoObject = new photosController(imgDiv, photoUrl);
-                    photoObject.show();
-                }
+                var imgDiv = document.querySelector(".imageDiv");
+
+
+
+                var row = new rowController(imgDiv, parse.photos);
+
 
             }
         };
