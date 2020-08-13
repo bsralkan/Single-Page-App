@@ -14,18 +14,35 @@ var launchController = (function() {
         //lController.prototype.modal();
 
     }
+    lController.prototype.slide = function() {
+        var self = this;
+        var url = "Model/slide.json";
+        var xhttp = new XMLHttpRequest();
+        self.parent = document.getElementById("slideShow");
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = this.responseText;
+                var parse = JSON.parse(response);
+                var slideShow = slideController(self.parent, parse.photos);
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
     lController.prototype.img = function() {
+        lController.prototype.slide();
+        var self = this;
         var url = "Model/photo.json";
         var xhttp = new XMLHttpRequest();
         var container = document.querySelector(".photosDiv");
-
+        self.parent = document.getElementById("slideShow");
 
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var response = this.responseText;
                 var parse = JSON.parse(response);
+                //var slideShow = slideController(self.parent, parse.photos);
                 var row = new rowController(container, parse.photos);
-
             }
         };
         xhttp.open("GET", url, true);

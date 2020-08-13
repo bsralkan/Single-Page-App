@@ -30,6 +30,14 @@
             "tag2": "#gray",
             "tag3": "#day"
 
+        },
+        {
+            "url": "photos/5.jpg",
+            "detail": "Nature architecture",
+            "tag1": "#architecture",
+            "tag2": "#green",
+            "tag3": "#peace"
+
         }
 
 

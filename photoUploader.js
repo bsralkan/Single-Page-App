@@ -1,3 +1,4 @@
+"use strict"
 var uploader = (function() {
 
     var btn = undefined,
@@ -6,27 +7,29 @@ var uploader = (function() {
 
         preview = undefined;
 
-    function uploader(file) {
-
+    function uploader(files) {
+        var fInput = document.getElementById("fInput");
+        var file = fInput.files[0];
         var xmlHttpRequest = new XMLHttpRequest(),
 
-            fileName = file.name,
-
-            target = "http://localhost/ImageUploadDemo/api/ImageUpload",
-
-            mimeType = file.type;
+            target = "http://localhost/ImageUploadDemo/api/ImageUpload";
 
         xmlHttpRequest.open('POST', target, true);
+        xmlHttpRequest.setRequestHeader("encrypt", "multipart/form-data");
+        var formData = new FormData();
+        formData.append("file", file);
+        xmlHttpRequest.send(formData);
 
-        xmlHttpRequest.setRequestHeader('Content-Type', mimeType);
-
-        // xmlHttpRequest.setRequestHeader('Content-Disposition', 'attachment; filename="' + fileName + '"');
-
-        xmlHttpRequest.send(file);
+        xmlHttpRequest.onreadystatechange = function() {
+            debugger;
+            if (xmlHttpRequest.readyState == 4 && xmlHttp.status == 200) {
+                alert(xmlHttpRequest.responseText);
+            }
+        }
 
     }
 
-    function btnClick() {
+    function btnClick(fInput) {
 
         if (fInput.files.length > 0) {
 
@@ -46,7 +49,7 @@ var uploader = (function() {
 
 
 
-        btnClick();
+        btnClick(fInput);
     }
 
     return {
